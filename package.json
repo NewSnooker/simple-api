@@ -1,0 +1,26 @@
+{
+  "name": "back-end-api-art",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "dev": "nodemon ./bin/www"
+  },
+  "dependencies": {
+    "@google-cloud/storage": "^7.12.1",
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.5.4",
+    "morgan": "~1.9.1",
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "^3.1.4",
+    "passport": "^0.7.0",
+    "passport-jwt": "^4.0.1",
+    "sharp": "^0.33.5",
+    "uuid": "^10.0.0"
+  }
+}
