@@ -8,9 +8,7 @@ const config = require("../config/index");
 
 const storage = new Storage({
   projectId: "simple-api-images",
-  keyFilename: path.resolve(
-    "./simple-api-images-firebase-adminsdk-ags13-e87a287750.json"
-  ),
+  keyFilename: config.GOOGLE_APPLICATION_CREDENTIALS,
 });
 const bucket = storage.bucket("simple-api-images.appspot.com");
 
