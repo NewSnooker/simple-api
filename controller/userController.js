@@ -8,7 +8,12 @@ const config = require("../config/index");
 
 let storage;
 if (process.env.GOOGLE_APPLICATION_CREDENTIALS) {
-  storage = new Storage();
+  const cd = JSON.parse(process.env.GOOGLE_APPLICATION_CREDENTIALS);
+
+  storage = new Storage({
+    projectId: cd.project_id,
+    credentials: cd,
+  });
   console.log("123486");
 } else {
   // storage = new Storage({
