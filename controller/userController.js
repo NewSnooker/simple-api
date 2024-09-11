@@ -6,10 +6,17 @@ const sharp = require("sharp");
 const jwt = require("jsonwebtoken");
 const config = require("../config/index");
 
-const storage = new Storage({
-  projectId: "simple-api-images",
-  keyFilename: config.GOOGLE_APPLICATION_CREDENTIALS,
-});
+let storage;
+if (process.env.GOOGLE_APPLICATION_CREDENTIALS) {
+  storage = new Storage();
+} else {
+  storage = new Storage({
+    projectId: "simple-api-images",
+    keyFilename: path.resolve(
+      "./simple-api-images-firebase-adminsdk-ags13-e87a287750.json"
+    ),
+  });
+}
 const bucket = storage.bucket("simple-api-images.appspot.com");
 
 exports.showAllUsers = async (req, res, next) => {
